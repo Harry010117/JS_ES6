@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// 스코프
+		for (var i = 1; i++ < 10;);
+		console.log(i)
+
+		// es5는 함수 단위 스코프
+		/*var b = (function (){
+			for (var j = 1; j++ < 10;);
+		}())
+		console.log(j)*/
+
+		// es6는 블록 단위 스코프
+		for (let j = 1; j < 10; console.log(j++));
+		//console.log(j)
+
+		{
+			const j = 10
+			console.log(j)
+		}
+		// console.log(j)  // j에 스코프 적용됨
+	</script>
+</body>
+</html>

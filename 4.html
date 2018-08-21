@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// clojure
+		function test (a, b) {
+			var aa = a
+			var bb = b
+			return function () {
+				aa += 5
+				bb--
+				return aa + bb
+			}
+		}
+
+		// laypopup
+		function popup () {
+			const template = `
+			<div class="layer">
+				<div>
+					<a href="#">X</a>
+					{{content}}
+				</div>
+			</div>`
+			return function (html) {
+				return template.replace('{{content}}', html)
+			}
+		}
+
+
+		console.log(test(10, 20)())
+		console.log(test(10, 20)())
+		console.log(test(10, 20)())
+		console.log(test(10, 20)())
+		console.log(test(10, 20)())
+
+		const a = test(10, 20)
+
+		console.log(a())
+		console.log(a())
+		console.log(a())
+		console.log(a())
+		console.log(a())
+	</script>
+</body>
+</html>

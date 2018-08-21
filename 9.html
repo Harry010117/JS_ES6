@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		class Test {
+			cosntructor () {
+				this.realA = 10
+			}
+
+			static init () {
+				Test.instance = new Test()
+			}
+
+			static getInstance () {
+				return Test.instance
+			}
+
+			set a (ele) {
+				console.log(`set A !! : ${ele}`)
+				this.realA = ele
+			}
+
+			get a () {
+				console.log("get A!!")
+				return this.realA
+			}
+		}
+
+		Test.init();
+		const obj1 = Test.getInstance()
+
+		obj1.a = 'test'
+		obj1.a
+	</script>
+</body>
+</html>

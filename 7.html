@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		const obj1 = {test: 10}
+		const obj2 = obj1
+		const obj3 = obj1
+
+		console.log(obj1 === obj2, obj1 === obj3, obj2 === obj3)
+
+		obj1.test = 20
+		console.log(obj1, obj2, obj3)
+		obj2.test = 30
+		console.log(obj1, obj2, obj3)
+		obj3.test = 40
+		console.log(obj1, obj2, obj3)
+
+		const obj4 = {test: 10}
+		const obj5 = {test: 10}
+		const obj6 = {test: 10}
+
+		console.log(obj4 === obj5, obj4 === obj6, obj5 === obj6)
+		
+		obj4.test = 20
+		console.log(obj4, obj5, obj6)
+		obj5.test = 30
+		console.log(obj4, obj5, obj6)
+		obj6.test = 40
+		console.log(obj4, obj5, obj6)
+	</script>
+</body>
+</html>

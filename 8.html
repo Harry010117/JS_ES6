@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		class Test {
+			cosntructor () {
+				this.a = 10
+			}
+
+			static init () {
+				Test.instance = new Test()
+			}
+
+			static getInstance () {
+				return Test.instance
+			}
+		}
+
+		Test.init();
+		const obj1 = Test.getInstance()
+		const obj2 = Test.getInstance()
+		const obj3 = Test.getInstance()
+		const obj4 = new Test()
+		const obj5 = new Test()
+		const obj6 = new Test()
+
+		console.log(obj1 === obj2, obj2 === obj3, obj1 === obj3)
+		console.log(obj4 === obj5, obj5 === obj6, obj4 === obj6)
+	</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// js는 참조 매개변수를 사용합니다.
+		function f1 (obj) {
+			obj.a = 10
+		}
+
+		// 그런데 사실은 완전한 참조 매개변수가 아닙니다.
+		function f2 (obj) {
+			obj = 10
+			console.log(obj)
+		}
+
+		let before = {
+			a: 5
+		}
+
+		f1(before)
+		console.log(before)
+
+		f2(before)
+		console.log(before)
+	</script>
+</body>
+</html>
